@@ -1,6 +1,4 @@
-ionic-angular-cordova-seed
-==========================
+static-weather
+==============
 
-The perfect starting point for an Ionic project.
-
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+The title says it all
