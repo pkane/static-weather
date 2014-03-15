@@ -1,4 +1,6 @@
 /* Your app's CSS, go crazy, make it your own */
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+@import url(http://fonts.googleapis.com/css?family=Sintony:700);
 
 .ionic-logo {
   display: block;
@@ -6,3 +8,51 @@
   width: 96px;
   height: 96px;
 }
+
+
+.cream-background {
+background: -webkit-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -o-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -ms-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -moz-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: linear-gradient(18deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+
+
+}
+
+.bar.bar-cream{
+background-color:rgb(241, 239, 234);
+	background: -webkit-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -o-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -ms-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -moz-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: linear-gradient(50deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+-webkit-box-shadow: 0 1px 1px 0 #000000;
+box-shadow: 0px 2px 2px -2px #000000;
+}
+
+.pink{
+	font-family: 'Gafata', sans-serif;
+	font-size: 45px;
+	color:rgb(243,77,122);
+}
+
+.dark-blue{
+	font-family: 'Sintony', sans-serif;
+color:rgb(69,91,104);
+}
+
+
+
+.sunny-cloud{
+  display: block;
+  text-indent: -9999px;
+  width: 200px;
+  height: 200px;
+  background: url(../img/sunny-cloud.svg) no-repeat;
+  background-size: 200px 200px;
+  color:rgb(62,201,196);
+}
+​path {
+    fill: rgb(62,201,196);
+}​
