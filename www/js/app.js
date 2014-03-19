@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
+angular.module('starter', ['ionic','angularLocalStorage', 'starter.services', 'starter.controllers'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -17,7 +17,8 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
   $stateProvider
     .state('home',{
       url: "/home",
-      templateUrl:"templates/home.html"
+      templateUrl:"templates/home.html",
+      controller: 'HomeCtrl'
     })
     // setup an abstract state for the tabs directive
     .state('tab', {
@@ -66,7 +67,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/pets');
+  $urlRouterProvider.otherwise('/home');
 
 });
 
