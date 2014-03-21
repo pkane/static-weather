@@ -3,6 +3,12 @@ static-weather
 
 The title says it all
 
+Built in Angular JS plus the ionic Framework
+
+Docs here: http://ionicframework.com/docs/
+
+Example Project: https://github.com/driftyco/ionic-angular-cordova-seed
+
 
 Install Requirements
 ====================
