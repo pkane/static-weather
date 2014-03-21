@@ -11,19 +11,19 @@ Install Requirements
 
 2. npm install -g ionic
 
-run on device:
+  run on device:
 
-ionic run ios
+    ionic run ios
 
-run on emulator:
+  run on emulator:
 
-ionic emulate ios
+    ionic emulate ios
 
 (all commands work with android too - both SDKs must be installed)
 
-Run in Browser
+  Run in Browser:
 
-cd in root directiony: node scripts/web-server.js 
+    cd in root directiony: node scripts/web-server.js 
 
 Should start local server on :8000 nav to www/index.html
 
