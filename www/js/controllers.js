@@ -74,7 +74,7 @@ function onSuccess(position) {
             angular.forEach(arrAddress, function (address_component,i) {
               if (address_component.types[0] == "locality") {
                 console.log(address_component.long_name); // city
-                storage.set('location',address_component.long_name);
+                storage.set('savedcity',address_component.long_name);
 
 
                 return address_component.long_name // break
