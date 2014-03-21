@@ -31,6 +31,9 @@ If you want to run it on your iphone: see me for provisioning profile
 
 Other things
 ====================
+
+Phonegap is a little weird when it comes to where files live. The root www folder is where our working directory is but they get copied to their Platform www directories at build/runtime. Sometimes you have to force the issue with a prepare command
+
 cordova = phonegap
 
 cordova prepare ios : a command that preps everything in your root/www folder 
