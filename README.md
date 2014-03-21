@@ -11,11 +11,11 @@ Install Requirements
 
 2. npm install -g ionic
 
-  run on device:
+run on device:
 
     ionic run ios
 
-  run on emulator:
+run on emulator:
 
     ionic emulate ios
 
@@ -27,7 +27,7 @@ Install Requirements
 
 Should start local server on :8000 nav to www/index.html
 
-ios use: see me for provisioning profile
+If you want to run it on your iphone: see me for provisioning profile
 
 Other things
 ====================
