@@ -1,12 +1,18 @@
 angular.module('starter.controllers', [])
 
+.controller('HomeCtrl', function($scope,$compile,storage,geoLocate) {
 
-// A simple controller that fetches a list of data from a service
-.controller('HomeCtrl', function($scope,$compile,storage) {
+// I don't know how else to get this image in the main bar since its all weird and dyanmic
+var geopin = $compile(angular.element('<img ng-click="updateCity()" class="geopin"  src="./img/geopin.png" />'))($scope);
 
-//var geopin = '<img ng-click="navPlz()" class="geopin"  src="./img/geopin.png" />'
-var geopin = $compile(angular.element('<img ng-click="navPlz()" class="geopin"  src="./img/geopin.png" />'))($scope);
- $scope.navPlz = function(e) {navigator.geolocation.getCurrentPosition(onSuccess, onError);}
+$scope.updateCity = function(e) { 
+  cityName = geoLocate.getCity(); 
+  updateBar(geopin,cityName);
+
+}
+
+
+//toggles side menu and creates button on bar
 $scope.leftButtons = [
   {
     type: 'button-clear',
@@ -16,13 +22,49 @@ $scope.leftButtons = [
     }
   }
 ]
-var onSuccess = function(position) {
 
-        var geocoder = new google.maps.Geocoder();
-        
+//our current saved location (city name)
+var savedCity = storage.get('savedcity');
+
+//no locally saved location - go out and get it with geoLocate
+if(savedCity === null){ 
+  cityName = geoLocate.getCity();
+  updateBar(geopin,cityName);
+
+}
+
+//sweet we have it saved, just use it
+else {
+  updateBar(geopin,savedCity);
+}
+
+//because - reasons: ionic framework does dynamic bars weird
+//Need to fix this
+function updateBar(geopin,city_name){
+  $('.title').html()
+  $('.title').prepend(geopin);
+  $('.title').append(city_name);
+}
+
+})//A Factory for 1. getting gps location from phone 2. finding cityname
+.factory('geoLocate', function($state,storage) {
+
+
+return {
+  //public methods go here
+  getCity: function(){
+    //standard gps lookup in JS
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+  }
+}
+
+//Private methods
+function onSuccess(position) {
+
+      var geocoder = new google.maps.Geocoder();  
       var lat = parseFloat(position.coords.latitude);
       var lng = parseFloat(position.coords.longitude);
-       var latlng = new google.maps.LatLng(lat, lng);
+      var latlng = new google.maps.LatLng(lat, lng);
                         
       geocoder.geocode({'latLng': latlng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
@@ -33,11 +75,9 @@ var onSuccess = function(position) {
               if (address_component.types[0] == "locality") {
                 console.log(address_component.long_name); // city
                 storage.set('location',address_component.long_name);
-                    $('.title').prepend(geopin);
-                    $('.title').append(address_component.long_name);
-                  $scope.$apply();
 
-                return false // break
+
+                return address_component.long_name // break
               }
             });
           } else {
@@ -50,41 +90,11 @@ var onSuccess = function(position) {
 
 };
 
-function alertDismissed() {
-    // do something
-}
 // onError Callback receives a PositionError object
-//
 function onError(error) {
     console.log('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
 
-
-
-var location = storage.get('location');
-
-if(location === null){
-  console.log('here')
-navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
-}
-else {
-    //$scope.locationTitle = location;
-  $('.title').prepend(geopin);
-  $('.title').append(location);
-
-
-}
-
-
-
 })
 
-
-
-// A simple controller that shows a tapped item's data
-.controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
-  // "Pets" is a service returning mock data (services.js)
-  $scope.pet = PetService.get($stateParams.petId);
-});
