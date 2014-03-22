@@ -1,11 +1,5 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','angularLocalStorage', 'starter.services', 'starter.controllers'])
+//Routing
+angular.module('staticWeather', ['ionic','angularLocalStorage', 'staticWeather.controllers'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -27,7 +21,7 @@ angular.module('starter', ['ionic','angularLocalStorage', 'starter.services', 's
       templateUrl: "templates/tabs.html"
     })
 
-    // the pet tab has its own child nav-view and history
+    // These Don't do anything in our app but i'm keeping them here for examples
     .state('tab.pet-index', {
       url: '/pets',
       views: {
@@ -44,24 +38,6 @@ angular.module('starter', ['ionic','angularLocalStorage', 'starter.services', 's
         'pets-tab': {
           templateUrl: 'templates/pet-detail.html',
           controller: 'PetDetailCtrl'
-        }
-      }
-    })
-
-    .state('tab.adopt', {
-      url: '/adopt',
-      views: {
-        'adopt-tab': {
-          templateUrl: 'templates/adopt.html'
-        }
-      }
-    })
-
-    .state('tab.about', {
-      url: '/about',
-      views: {
-        'about-tab': {
-          templateUrl: 'templates/about.html'
         }
       }
     });

@@ -49,9 +49,14 @@ color:rgb(69,91,104);
 
 }
 .geopin {
-
-  width:18px;
-  margin-right:10px;
+width: 18px;
+margin-right: 10px;
+margin-left: 10px;
+position: absolute;
+top: 6px;
+text-align: center;
+left: 0;
+white-space: nowrap;
 }
 .bar .title{font-size:22px;font-family: 'Sintony', sans-serif; color:rgb(69,91,104);}
 .sunny-cloud{

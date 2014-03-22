@@ -1,13 +1,18 @@
-angular.module('starter.controllers', [])
+angular.module('staticWeather.controllers', [])
 
 .controller('HomeCtrl', function($scope,$compile,storage,geoLocate) {
 
 // I don't know how else to get this image in the main bar since its all weird and dyanmic
 var geopin = $compile(angular.element('<img ng-click="updateCity()" class="geopin"  src="./img/geopin.png" />'))($scope);
+ $('.bar-header').prepend(geopin);
+ //Problem: we need to fix this with JS that places the geopin correctly 
+ //based on body size and title
+ $('.geopin').css({'left':'34%','right':'34%'});
 
+//ng-click handler attached to Geo Pin image
 $scope.updateCity = function(e) { 
-  cityName = geoLocate.getCity(); 
-  updateBar(geopin,cityName);
+  
+  $scope.locationTitle =geoLocate.getCity();
 
 }
 
@@ -28,23 +33,15 @@ var savedCity = storage.get('savedcity');
 
 //no locally saved location - go out and get it with geoLocate
 if(savedCity === null){ 
-  cityName = geoLocate.getCity();
-  updateBar(geopin,cityName);
+  $scope.locationTitle = geoLocate.getCity();
 
 }
 
 //sweet we have it saved, just use it
 else {
-  updateBar(geopin,savedCity);
+   $scope.locationTitle = savedCity;
 }
 
-//because - reasons: ionic framework does dynamic bars weird
-//Need to fix this
-function updateBar(geopin,city_name){
-  $('.title').html()
-  $('.title').prepend(geopin);
-  $('.title').append(city_name);
-}
 
 })//A Factory for 1. getting gps location from phone 2. finding cityname
 .factory('geoLocate', function($state,storage) {
