@@ -1,0 +1,31 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-cream">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+
+      <h1 class="title"><img ng-click="updateCity()" class="geopin"  src="./img/geopin.png" />{{locationTitle}}</h1>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right">
+
+  </ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-cream">
+      <h1 class="title">Menu</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item nav-clear menu-close href="#/app/home">
+          Home
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/app/about">
+          About
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
+

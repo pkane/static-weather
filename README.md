@@ -1,45 +1,53 @@
-static-weather
-==============
+Ionic App Base
+=====================
 
-The title says it all
+A starting project for Ionic that optionally supports
+using custom SCSS.
 
-Built in Angular JS plus the ionic Framework
+## Using this project
 
-Docs here: http://ionicframework.com/docs/
+We recommend using the `ionic` utility to create new Ionic projects that are based on this project but use a ready-made starter template.
 
-Example Project: https://github.com/driftyco/ionic-angular-cordova-seed
+For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
 
+```bash
+$ sudo npm install -g ionic
+```
 
-Install Requirements
-====================
+Then run:
 
-1. npm install -g cordova
+```bash
+$ sudo npm install -g ionic
+$ ionic start myProject tabs
+```
 
-2. npm install -g ionic
+More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page.
 
-run on device:
+## Installation
 
-    ionic run ios
+While we recommend using the `ionic` utility to create new Ionic projects, you can use this repo as a barebones starting point to your next Ionic app.
 
-run on emulator:
+To use this project as is, first clone the repo from GitHub, then run:
 
-    ionic emulate ios
+```bash
+$ cd ionic-app-base
+$ sudo npm install -g cordova ionic gulp
+$ npm install
+$ gulp init
+```
 
-(all commands work with android too - both SDKs must be installed)
+## Using Sass (optional)
 
-  Run in Browser:
+This project makes it easy to use Sass (the SCSS syntax) in your projects. This enables you to override styles from Ionic, and benefit from
+Sass's great features.
 
-    cd in root directiony: node scripts/web-server.js 
+Just update the `./scss/ionic.app.scss` file, and run `gulp` or `gulp watch` to rebuild the CSS files for Ionic.
 
-Should start local server on :8000 nav to www/index.html
+Note: if you choose to use the Sass method, make sure to remove the included `ionic.css` file in `index.html`, and then uncomment
+the include to your `ionic.app.css` file which now contains all your Sass code and Ionic itself:
 
-If you want to run it on your iphone: see me for provisioning profile
-
-Other things
-====================
-
-Phonegap is a little weird when it comes to where files live. The root www folder is where our working directory is but they get copied to their Platform www directories at build/runtime. Sometimes you have to force the issue with a prepare command
-
-cordova = phonegap
-
-cordova prepare ios : a command that preps everything in your root/www folder 
+```html
+<!-- IF using Sass (run gulp sass first), then remove the CSS include above
+<link href="css/ionic.app.css" rel="stylesheet">
+-->
+```

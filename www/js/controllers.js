@@ -1,13 +1,6 @@
 angular.module('staticWeather.controllers', [])
 
-.controller('HomeCtrl', function($scope,$compile,storage,geoLocate) {
-
-// I don't know how else to get this image in the main bar since its all weird and dyanmic
-var geopin = $compile(angular.element('<img ng-click="updateCity()" class="geopin"  src="./img/geopin.png" />'))($scope);
- $('.bar-header').prepend(geopin);
- //Problem: we need to fix this with JS that places the geopin correctly 
- //based on body size and title
-
+.controller('AppCtrl', function($scope,$compile,storage,geoLocate) {
 
  $('.geopin').css({'left':'25%','right':'25%'});
 
