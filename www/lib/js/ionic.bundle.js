@@ -4658,7 +4658,7 @@ ionic.views.Scroll = ionic.views.View.inherit({
      * correctly as long as possible.
      */
     align: ionic.animationFrameThrottle(function(titleSelector) {
-
+      console.log($('.geopin'));
       // Find the titleEl element
       var titleEl = this.el.querySelector(titleSelector || '.title');
       if(!titleEl) {

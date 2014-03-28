@@ -7,7 +7,9 @@ var geopin = $compile(angular.element('<img ng-click="updateCity()" class="geopi
  $('.bar-header').prepend(geopin);
  //Problem: we need to fix this with JS that places the geopin correctly 
  //based on body size and title
- $('.geopin').css({'left':'34%','right':'34%'});
+
+
+ $('.geopin').css({'left':'25%','right':'25%'});
 
 //ng-click handler attached to Geo Pin image
 $scope.updateCity = function(e) { 
@@ -94,4 +96,3 @@ function onError(error) {
 }
 
 })
-
