@@ -1,34 +1,21 @@
 angular.module('staticWeather.controllers', [])
 
-.controller('AppCtrl', function($scope,$compile,storage,geoLocate) {
+.controller('AppCtrl', function($scope,$compile,storage) {
 
- $('.geopin').css({'left':'25%','right':'25%'});
+
 
 //ng-click handler attached to Geo Pin image
 $scope.updateCity = function(e) { 
-  
-  $scope.locationTitle =geoLocate.getCity();
-
+  getCity();
 }
 
-
-//toggles side menu and creates button on bar
-$scope.leftButtons = [
-  {
-    type: 'button-clear',
-    content: '<i class="icon ion-navicon"></i>',
-    tap: function(e) {
-      $scope.sideMenuController.toggleLeft();
-    }
-  }
-]
 
 //our current saved location (city name)
 var savedCity = storage.get('savedcity');
 
 //no locally saved location - go out and get it with geoLocate
 if(savedCity === null){ 
-  $scope.locationTitle = geoLocate.getCity();
+   getCity();
 
 }
 
@@ -38,17 +25,11 @@ else {
 }
 
 
-})//A Factory for 1. getting gps location from phone 2. finding cityname
-.factory('geoLocate', function($state,storage) {
 
-
-return {
-  //public methods go here
-  getCity: function(){
-    //standard gps lookup in JS
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-  }
+function getCity(){
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
+ 
 
 //Private methods
 function onSuccess(position) {
@@ -67,9 +48,9 @@ function onSuccess(position) {
               if (address_component.types[0] == "locality") {
                 console.log(address_component.long_name); // city
                 storage.set('savedcity',address_component.long_name);
+                  $scope.locationTitle =address_component.long_name;
 
-
-                return address_component.long_name // break
+                return false// break
               }
             });
           } else {
@@ -87,5 +68,4 @@ function onError(error) {
     console.log('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
-
 })
