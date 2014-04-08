@@ -5,9 +5,9 @@ angular.module('staticWeather.controllers', [])
 
 
 //ng-click handler attached to Geo Pin image
-$scope.updateCity = function(e) { 
-  getCity();
-}
+  $scope.updateCity = function(e){
+    getCity();
+  }
 
 
 //our current saved location (city name)
@@ -27,6 +27,7 @@ else {
 
 
 function getCity(){
+  $('.loader').show();
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
  

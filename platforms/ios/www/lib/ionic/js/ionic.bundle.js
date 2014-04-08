@@ -5096,23 +5096,23 @@ ionic.views.Scroll = ionic.views.View.inherit({
         // right children, and the desired alignment mode
         if(align == 'center') {
           if(margin > 10) {
-            titleEl.style.left = margin + 'px';
-            titleEl.style.right = margin + 'px';
+           // titleEl.style.left = margin + 'px';
+           // titleEl.style.right = margin + 'px';
           }
           if(titleEl.offsetWidth < titleEl.scrollWidth) {
             if(rightWidth > 0) {
-              titleEl.style.right = (rightWidth + 5) + 'px';
+             // titleEl.style.right = (rightWidth + 5) + 'px';
             }
           }
         } else if(align == 'left') {
           titleEl.classList.add('title-left');
           if(leftWidth > 0) {
-            titleEl.style.left = (leftWidth + 15) + 'px';
+           // titleEl.style.left = (leftWidth + 15) + 'px';
           }
         } else if(align == 'right') {
           titleEl.classList.add('title-right');
           if(rightWidth > 0) {
-            titleEl.style.right = (rightWidth + 15) + 'px';
+           // titleEl.style.right = (rightWidth + 15) + 'px';
           }
         }
       });

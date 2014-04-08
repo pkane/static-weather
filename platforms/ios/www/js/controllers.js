@@ -2,11 +2,11 @@ angular.module('staticWeather.controllers', [])
 
 .controller('AppCtrl', function($scope,$compile,storage) {
 
- $('.geopin').css({'left':'15%','right':'15%'});
+
 
 //ng-click handler attached to Geo Pin image
 $scope.updateCity = function(e) { 
-  getCity();
+    getCity();
 }
 
 
