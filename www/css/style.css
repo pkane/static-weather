@@ -31,6 +31,17 @@ background: linear-gradient(50deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100
 box-shadow: 0px 2px 2px -2px #000000;
 }
 
+.forecast-row {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.curtemp-col {
+  position: absolute;
+  right: 0;
+}
+
 .pink{
   font-family: 'Gafata', sans-serif;
   font-size: 45px;
@@ -43,20 +54,23 @@ box-shadow: 0px 2px 2px -2px #000000;
 }
 
 .current-temp {
-  font-size: 36px;
+  position: absolute;
+  right: 20px;
+  font-size: 46px;
 }
 
 .temp-details {
-width: 65%;
+padding: 0 30px;
 position: relative;
 bottom: auto;
 border: none;
-margin-top: -25px;
+margin-top: -15px;
 background: none;
 }
 
 .temp-details > li {
-  font-size: 24px;
+font-size: 24px;
+padding: 0;
 }
 
 .loader{display:none;}
@@ -82,5 +96,14 @@ white-space: nowrap;
 .current-temp:after {
     content: "\00b0"
 }
-.ion-ios7-partlysunny:before{height:50px;}
-.current-title{}
+.ion-ios7-partlysunny {
+  height: 150px;
+}
+.ion-ios7-partlysunny:before{
+height:50px;
+bottom: 10px;
+position: relative;
+}
+.current-title{
+  text-align: center;
+}
