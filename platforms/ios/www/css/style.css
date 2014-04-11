@@ -43,6 +43,7 @@ color:rgb(69,91,104);
 }
 
 
+
 .svg-container{
   width:300px;
   height:300px;
@@ -61,8 +62,9 @@ white-space: nowrap;
 .bar .title{min-width:40px; font-family: 'Sintony', sans-serif; color:rgb(69,91,104);}
 .ion-location{ font-size: 30px; left:-20px; top:-22px; position: absolute;}
 .icon-container{position: relative; display:inline-block;}
-.current-forecast{font-size: 200px; color:rgb(59,192,187);}
+.current-forecast{font-size: 200px; color:rgb(59,192,187); height:50px;}
 .current-temp:after {
     content: "\00b0"
 }
+.ion-ios7-partlysunny:before{height:50px;}
 .current-title{}

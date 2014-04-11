@@ -5,9 +5,11 @@ angular.module('staticWeather.controllers', [])
 
 
 //ng-click handler attached to Geo Pin image
-$scope.updateCity = function(e) { 
+  $scope.updateCity = function(e){
+    $scope.geoUpdating = true;
     getCity();
-}
+
+  }
 
 
 //our current saved location (city name)
@@ -27,6 +29,7 @@ else {
 
 
 function getCity(){
+  $('.loader').show();
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
 }
  
@@ -48,15 +51,21 @@ function onSuccess(position) {
               if (address_component.types[0] == "locality") {
                 console.log(address_component.long_name); // city
                 storage.set('savedcity',address_component.long_name);
+                $scope.geoUpdating = false;
+                $scope.$apply();
                   $scope.locationTitle =address_component.long_name;
 
                 return false// break
               }
             });
           } else {
+            $scope.geoUpdating = false;
+            scope.$apply();
             console.log("No results found");
           }
         } else {
+          $scope.geoUpdating = false;
+          scope.$apply();
           console.log("Geocoder failed due to: " + status);
         }
       });
