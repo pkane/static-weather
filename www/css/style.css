@@ -18,12 +18,11 @@ background: -moz-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255
 background: linear-gradient(18deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
 
 
-
 }
 
 .bar.bar-cream{
 background-color:rgb(241, 239, 234);
-	background: -webkit-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+  background: -webkit-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
 background: -o-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
 background: -ms-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
 background: -moz-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
@@ -33,18 +32,34 @@ box-shadow: 0px 2px 2px -2px #000000;
 }
 
 .pink{
-	font-family: 'Gafata', sans-serif;
-	font-size: 45px;
-	color:rgb(243,77,122);
+  font-family: 'Gafata', sans-serif;
+  font-size: 45px;
+  color:rgb(243,77,122);
 }
 
 .dark-blue{
-	font-family: 'Sintony', sans-serif;
-color:rgb(69,91,104);
+  font-family: 'Sintony', sans-serif;
+  color:rgb(69,91,104);
 }
 
+.current-temp {
+  font-size: 36px;
+}
 
+.temp-details {
+width: 65%;
+position: relative;
+bottom: auto;
+border: none;
+margin-top: -25px;
+background: none;
+}
 
+.temp-details > li {
+  font-size: 24px;
+}
+
+.loader{display:none;}
 .svg-container{
   width:300px;
   height:300px;
