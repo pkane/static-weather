@@ -2997,7 +2997,7 @@ a.subdued {
   font-size: 32px; }
 
 .tabs-icon-left .tab-item, .tabs-icon-right .tab-item {
-  font-size: 12px; }
+  /*font-size: 12px;*/ }
   .tabs-icon-left .tab-item .icon, .tabs-icon-right .tab-item .icon {
     display: inline-block;
     vertical-align: top; }

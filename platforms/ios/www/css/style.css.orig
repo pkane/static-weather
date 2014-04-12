@@ -73,7 +73,11 @@ font-size: 24px;
 padding: 0;
 }
 
+<<<<<<< HEAD
+
+=======
 .loader{display:none;}
+>>>>>>> 204f82e2de1d8e48e174f80cebabcea7e11470d6
 .svg-container{
   width:300px;
   height:300px;
@@ -96,6 +100,10 @@ white-space: nowrap;
 .current-temp:after {
     content: "\00b0"
 }
+<<<<<<< HEAD
+.ion-ios7-partlysunny:before{height:50px;}
+.current-title{}
+=======
 .ion-ios7-partlysunny {
   height: 150px;
 }
@@ -107,3 +115,4 @@ position: relative;
 .current-title{
   text-align: center;
 }
+>>>>>>> 204f82e2de1d8e48e174f80cebabcea7e11470d6
