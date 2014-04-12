@@ -1,3 +1,10 @@
+    <ion-nav-bar class="bar-cream" align-title="center">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+      <h1 class="title" ng-click="updateCity()"> <div class="icon-container"><i  ng-class="geoUpdating ? 'ion-loading-c' : 'ion-location'" class="icon"></i></div> {{locationTitle}}</h1>
+    </ion-nav-bar>
 <ion-view class="cream-background">
 
   <ion-content has-header="true" >
@@ -10,12 +17,14 @@
              	<div class="col"><i class="icon ion-ios7-partlysunny current-forecast"></i></div>
              	<div class="col"><h1 class="dark-blue current-temp">67</h1></div>
              </div>
-          
-
-          <h1 class="dark-blue">Partly Cloudy</h1>
     </div>
 </div>
 
+<div class="row">
+	<div class="col col-offset-10">
+ 		<h1 class="dark-blue">Partly Cloudy</h1>
+	</div>
+</div>
 
 
 
