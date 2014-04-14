@@ -1,3 +1,11 @@
+    <ion-nav-bar class="bar-cream" align-title="center">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+
+      <h1 class="title" ng-click="updateCity()"> <div class="icon-container"><i  ng-class="geoUpdating ? 'ion-loading-c' : 'ion-location'" class="icon"></i></div> {{locationTitle}}</h1>
+      <ion-nav-buttons side="right"><button onclick="window.plugins.socialsharing.share('What a beautiful day outside', null, 'https://dl.dropboxusercontent.com/u/124976/sweather2.png', null)"  class="button button-icon icon ion-share"></button></ion-nav-buttons>
+    </ion-nav-bar>
 <ion-view class="cream-background">
 
   <ion-content has-header="true" >
