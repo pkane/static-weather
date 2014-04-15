@@ -1,0 +1,110 @@
+/* Your app's CSS, go crazy, make it your own */
+@import url(http://fonts.googleapis.com/css?family=Gafata);
+@import url(http://fonts.googleapis.com/css?family=Sintony:700);
+
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
+}
+
+
+.cream-background {
+background: -webkit-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -o-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -ms-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -moz-linear-gradient(72deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: linear-gradient(18deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+
+
+}
+
+.bar.bar-cream{
+background-color:rgb(241, 239, 234);
+  background: -webkit-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -o-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -ms-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: -moz-linear-gradient(40deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+background: linear-gradient(50deg, rgb(241, 239, 234) 0%, rgb(255, 255, 255) 100%);
+-webkit-box-shadow: 0 1px 1px 0 #000000;
+box-shadow: 0px 2px 2px -2px #000000;
+}
+
+.forecast-row {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.curtemp-col {
+  position: absolute;
+  right: 0;
+}
+
+.pink{
+  font-family: 'Gafata', sans-serif;
+  font-size: 45px;
+  color:rgb(243,77,122);
+}
+
+.dark-blue{
+  font-family: 'Sintony', sans-serif;
+  color:rgb(69,91,104);
+}
+
+.current-temp {
+  position: absolute;
+  right: 20px;
+  font-size: 46px;
+}
+
+.temp-details {
+padding: 0 30px;
+position: relative;
+bottom: auto;
+border: none;
+margin-top: -15px;
+background: none;
+}
+
+.temp-details > li {
+font-size: 24px;
+padding: 0;
+}
+
+
+
+.svg-container{
+  width:300px;
+  height:300px;
+
+}
+.geopin {
+width: 18px;
+margin-right: 10px;
+margin-left: 10px;
+/*position: absolute;*/
+top: 6px;
+text-align: center;
+left: 0;
+white-space: nowrap;
+}
+.bar .title{min-width:40px; font-family: 'Sintony', sans-serif; color:rgb(69,91,104);}
+.ion-location{ font-size: 30px; left:-20px; top:-22px; position: absolute;}
+.icon-container{position: relative; display:inline-block;}
+.current-forecast{font-size: 200px; color:rgb(59,192,187); height:50px;}
+.current-temp:after {
+    content: "\00b0"
+}
+.ion-ios7-partlysunny {
+  height: 150px;
+}
+.ion-ios7-partlysunny:before{
+height:50px;
+bottom: 10px;
+position: relative;
+}
+.current-title{
+  text-align: center;
+}
