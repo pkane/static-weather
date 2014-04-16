@@ -14,24 +14,24 @@
       <div class="col">
          <h2 class="pink current-title">TODAY</h2>
          <div class="row forecast-row">
-          <div class="col"><i class="icon ion-ios7-partlysunny current-forecast"></i></div>
-          <div class="col curtemp-col"><h1 class="dark-blue current-temp">67</h1></div>
+          <div class="col"><i class="icon {{currentForecast.icon}} current-forecast"></i></div>
+          <div class="col curtemp-col"><h1 class="dark-blue current-temp">{{currentForecast.currentTemp}}</h1></div>
          </div>
       </div>
   </div>
 
   <div class="row">
     <div class="col col-offset-10">
-      <h1 class="dark-blue">Partly Cloudy</h1>
+      <h1 class="dark-blue">{{currentForecast.title}}</h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <ul class="temp-details tabs tabs-icon-left">
-        <li class="tab-item high-temp"><i class="icon ion-arrow-up-c"></i>28&deg;</li>
-        <li class="tab-item low-temp"><i class="icon ion-arrow-down-c"></i>13&deg;</li>
-        <li class="tab-item precip"><i class="icon ion-waterdrop"></i>60%</li>
+        <li class="tab-item high-temp"><i class="icon ion-arrow-up-c"></i>{{currentForecast.highTemp}}&deg;</li>
+        <li class="tab-item low-temp"><i class="icon ion-arrow-down-c"></i>{{currentForecast.lowTemp}}&deg;</li>
+        <li class="tab-item precip"><i class="icon ion-waterdrop"></i>{{currentForecast.humidity}}</li>
       </ul>
     </div>
   </div>

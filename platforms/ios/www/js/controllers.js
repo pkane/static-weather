@@ -77,4 +77,14 @@ function onError(error) {
     console.log('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
-})
+
+  var dow = ['Mon','Tu']
+  var weatherPatterns = [{icon:'ion-ios7-sunny',title:'Sunny'},{icon:'ion-ios7-partlysunny',title:'Partly Sunny'},{icon:'ion-ios7-cloudy',title:'Partly Cloudy'}];
+  var randPattern = weatherPatterns[Math.floor(Math.random() * weatherPatterns.length)];
+  $scope.forecast = {currentForecast:randPattern};
+  console.log(randPattern);
+})//.directive('weatherPattern',function(){
+
+  //return {
+    //template: '<i class="icon {{forecast.currentForecast.icon}} current-forecast"></i>'
+  //}

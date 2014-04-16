@@ -1,6 +1,6 @@
 angular.module('staticWeather.controllers', [])
 
-.controller('AppCtrl', function($scope,$compile,storage) {
+.controller('AppCtrl',function($scope,$compile,storage,forecast) {
 
 
 
@@ -77,4 +77,34 @@ function onError(error) {
     console.log('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
-})
+
+$scope.currentForecast = forecast;
+
+
+}).factory('forecast', [function() {
+  //var dow = ['SU','MO','TU','WE','TH','FR','SA'];
+  //var d = new Date();
+  //var n = d.getDay()
+  var humidities = ['0%','10%','20%','30%','40%','50%'];
+  var randHumidity = humidities[Math.floor(Math.random() * humidities.length)];
+  var weatherPatterns = [{icon:'ion-ios7-sunny',title:'Sunny'},{icon:'ion-ios7-partlysunny',title:'Partly Sunny'},{icon:'ion-ios7-cloudy',title:'Partly Cloudy'}];
+  var randPattern = weatherPatterns[Math.floor(Math.random() * weatherPatterns.length)];
+  var rangeTemp = Math.floor(Math.random() * (75 - 62 + 1)) + 62;
+
+    return {
+        icon:randPattern['icon'],
+        title:randPattern['title'],
+        currentTemp:rangeTemp,
+        highTemp:rangeTemp + 3,
+        lowTemp:rangeTemp - 3,
+        humidity: randHumidity
+       
+    };
+  }]);
+
+
+//.directive('weatherPattern',function(){
+
+  //return {
+    //template: '<i class="icon {{forecast.currentForecast.icon}} current-forecast"></i>'
+  //}
