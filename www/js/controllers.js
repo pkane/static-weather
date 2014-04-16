@@ -78,33 +78,40 @@ function onError(error) {
           'message: ' + error.message + '\n');
 }
 
-$scope.currentForecast = forecast;
-
-
+$scope.currentForecast = forecast.generateWeather();
+var dow = ['SU','MO','TU','WE','TH','FR','SA'];
+var d = new Date();
+var n = d.getDay();
+delete dow[n];
+$scope.dow = dow;
+$scope.weekForecasts = [forecast.generateWeather(),forecast.generateWeather(),forecast.generateWeather(),forecast.generateWeather(),forecast.generateWeather(),forecast.generateWeather()];
+console.log($scope.weekForecasts);
 }).factory('forecast', [function() {
-  //var dow = ['SU','MO','TU','WE','TH','FR','SA'];
-  //var d = new Date();
-  //var n = d.getDay()
-  var humidities = ['0%','10%','20%','30%','40%','50%'];
+
+
+    return {
+      generateWeather: function(){
+          var humidities = ['0%','10%','20%','30%','40%','50%'];
   var randHumidity = humidities[Math.floor(Math.random() * humidities.length)];
   var weatherPatterns = [{icon:'ion-ios7-sunny',title:'Sunny'},{icon:'ion-ios7-partlysunny',title:'Partly Sunny'},{icon:'ion-ios7-cloudy',title:'Partly Cloudy'}];
   var randPattern = weatherPatterns[Math.floor(Math.random() * weatherPatterns.length)];
   var rangeTemp = Math.floor(Math.random() * (75 - 62 + 1)) + 62;
-
-    return {
+        return{
         icon:randPattern['icon'],
         title:randPattern['title'],
         currentTemp:rangeTemp,
         highTemp:rangeTemp + 3,
         lowTemp:rangeTemp - 3,
         humidity: randHumidity
+      }
+      }
+
        
     };
-  }]);
+  }]).directive('weekForecast',function(){
 
-
-//.directive('weatherPattern',function(){
-
-  //return {
-    //template: '<i class="icon {{forecast.currentForecast.icon}} current-forecast"></i>'
-  //}
+  return {
+    
+    template: '<li class="tab-item"><b class="wkday">{{dow}}</b><i class="icon {{weekForcast.icon}}"></i><span class="tmp-val">{{weekForcast.currentTemp}}&deg;</span></li>'
+  }
+  });

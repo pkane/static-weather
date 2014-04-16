@@ -39,12 +39,7 @@
   <div class="row">
     <div class="col">
       <ul class="five-day tabs tabs-icon-left">
-        <li class="tab-item"><b class="wkday">Tu</b><i class="icon ion-ios7-sunny-outline"></i><span class="tmp-val">28&deg;</span></li>
-        <li class="tab-item"><b class="wkday">We</b><i class="icon ion-ios7-thunderstorm-outline"></i><span class="tmp-val">13&deg;</span></li>
-        <li class="tab-item"><b class="wkday">Th</b><i class="icon ion-ios7-sunny-outline"></i><span class="tmp-val">35&deg;</span></li>
-        <li class="tab-item"><b class="wkday">Fr</b><i class="icon ion-ios7-cloudy-outline"></i><span class="tmp-val">28&deg;</span></li>
-        <li class="tab-item"><b class="wkday">Sa</b><i class="icon ion-ios7-thunderstorm-outline"></i><span class="tmp-val">13&deg;</span></li>
-        <li class="tab-item"><b class="wkday">Su</b><i class="icon ion-ios7-sunny-outline"></i><span class="tmp-val">40&deg;</span></li>        
+             <li ng-repeat="week in weekForecasts" class="tab-item"><b class="wkday">TU</b><i class="icon {{week.icon}}"></i><span class="tmp-val">{{week.currentTemp}}&deg;</span></li>
       </ul>
     </div>
   </div>  
